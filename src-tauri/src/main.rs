@@ -5,7 +5,6 @@ mod services;
 mod models;
 
 use dotenv::dotenv;
-use tauri::Manager;
 fn main() {
     dotenv().ok();
     tauri::Builder::default()
