@@ -9,14 +9,13 @@ export default function Login() {
   const handleSpotifyConnect = async () => {
     setLoading(true);
     try {
-      const url = await authService.login();
-      window.location.href = url;
+      await authService.login();
     } catch (err) {
-      alert("Error: " + err); 
+      console.error(err);
+      alert("Gagal membuka login: " + String(err));
       setLoading(false);
     }
   };
-
   return (
     <div className="size-full min-h-screen bg-background flex items-center justify-center">
       <div className="w-full max-w-md px-8">

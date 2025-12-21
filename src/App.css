@@ -1,54 +1,55 @@
+/* 1. Import Utama Tailwind v4 */
 @import "tailwindcss";
 
-/* --- Paste isi theme.css di sini --- */
+/* 2. Konfigurasi Tema & Warna (Sesuai Desain Figma Kamu) */
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --radius: 0.5rem;
+  /* Warna Dasar */
+  --color-background: #0a0a0a;
+  --color-foreground: #ededed;
+  
+  /* Warna Spotify */
   --color-spotify-green: #1db954;
+  --color-spotify-hover: #1ed760;
+
+  /* Warna UI Shadcn/Modern */
+  --color-card: #121212;
+  --color-muted: #282828;
+  --color-muted-foreground: #a8a8a8;
+  --color-border: #282828;
+  --color-secondary: #282828;
+  
+  /* Radius & Animasi */
+  --radius-lg: 0.5rem;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
 
-/* Setup Variabel CSS (Dark Mode Default) */
+/* 3. Reset Dasar & Font */
 :root {
-  --background: #0a0a0a;
-  --foreground: #e8e8e8;
-  --card: #121212;
-  --card-foreground: #e8e8e8;
-  --popover: #1a1a1a;
-  --popover-foreground: #e8e8e8;
-  --primary: #1db954; /* Kita set Primary jadi Hijau Spotify */
-  --primary-foreground: #000000;
-  --secondary: #1a1a1a;
-  --secondary-foreground: #e8e8e8;
-  --muted: #282828;
-  --muted-foreground: #a8a8a8;
-  --accent: #282828;
-  --accent-foreground: #e8e8e8;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #e8e8e8;
-  --border: #282828;
-  --input: #282828;
-  --ring: #1db954;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Paksa Dark Mode */
+  color-scheme: dark;
 }
 
 body {
-  @apply bg-background text-foreground antialiased;
-  font-family: 'Inter', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Pastikan elemen html/body full height agar background hitam penuh */
+html, body, #root {
+  height: 100%;
+  width: 100%;
 }
