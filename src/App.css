@@ -53,3 +53,21 @@ html, body, #root {
   height: 100%;
   width: 100%;
 }
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Class Utility Custom */
+.animate-running-led {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Transisi Background yang Super Halus */
+.transition-theme {
+  transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+}

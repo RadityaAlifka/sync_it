@@ -15,19 +15,18 @@ function App() {
 
   return (
     <BrowserRouter>
+      {/* Container utama Flex Row */}
       <div className="flex h-screen bg-background text-foreground overflow-hidden">
+        
+        {/* Sidebar akan otomatis mendorong konten karena sifat flex */}
         <Sidebar />
         
-        <div className="flex-1 overflow-y-auto">
+        {/* Konten Kanan (Flex-1 akan mengisi sisa ruang) */}
+        <div className="flex-1 overflow-y-auto relative transition-all duration-300">
             <Routes>
                 <Route path="/" element={<Navigate to="/dashboard" />} />
-                
-                {/* Dashboard Utama */}
                 <Route path="/dashboard" element={<Dashboard />} />
-                
-                {/* Dashboard Spesifik Platform (Dynamic Route) */}
                 <Route path="/library/:platform" element={<Dashboard />} />
-                
                 <Route path="/profile" element={<Profile />} />
             </Routes>
         </div>
